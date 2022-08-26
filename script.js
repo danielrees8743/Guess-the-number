@@ -2,6 +2,7 @@
 
 // Genterates a random number and declares staring score
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
+console.log(secretNumber);
 let score = 20;
 let highScore = 0;
 
@@ -12,7 +13,7 @@ const displayMessage = function (message) {
 
 const scoreEl = document.querySelector('.score');
 
-document.querySelector('.check').addEventListener('mousedown', guessScore);
+// document.querySelector('.check').addEventListener('mousedown');
 
 // Takes the value from the guess and stores the guess
 document.querySelector('.check').addEventListener('click', () => {
@@ -63,9 +64,9 @@ document.querySelector('.check').addEventListener('click', () => {
 document.querySelector('.again').addEventListener('click', _ => {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
+  document.querySelector('.score').textContent = score;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').textContent = '?';
-  // document.querySelector('input').value = 0;
   displayMessage('Start guessing...');
   document.querySelector('.guess').value = '';
 });
